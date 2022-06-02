@@ -15,8 +15,15 @@ return new class extends Migration
     {
         Schema::create('telefonos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('postulante_id');
             $table->string('numero');
             $table->timestamps();
+            //Relacion de 1 a Muchos --> 1 postulante tiene muchos telefonos
+            $table->foreign('postulante_id')
+                ->references('id')
+                ->on('postulantes')
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
         });
     }
 

@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+use App\Models\Postulante;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Telefono extends Model
 {
@@ -16,5 +18,10 @@ class Telefono extends Model
     protected $fillable = [
         'numero',
     ];
+
+    public function postulante()
+    {
+        return $this->belongsTo(Postulante::class);
+    }
     
 }

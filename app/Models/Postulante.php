@@ -24,4 +24,9 @@ class Postulante extends Model
         'cargo_ocupa',
     ];
 
+    public function telefonos()
+    {
+        return $this->hasMany(Telefono::class);
+    }
+
 }
