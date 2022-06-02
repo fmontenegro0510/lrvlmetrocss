@@ -2,15 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Telefono;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Postulante extends Model
 {
     use HasFactory;
 
     //Definimos la tabla a la que hace referencia el modelo, en la base de datos
-        protected $table = 'postulantes';
+        // protected $table = 'postulantes';
 
     //Definimos los campos que se pueden llenar de forma masiva
     protected $fillable = [
