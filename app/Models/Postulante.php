@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Telefono;
+use App\Models\Estado_civil;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -20,7 +21,6 @@ class Postulante extends Model
         'dni',
         'fecha_matricula',
         'domicilio',
-        'email',
         'url_foto',
         'cargo_ocupa',
     ];
@@ -28,6 +28,11 @@ class Postulante extends Model
     public function telefonos()
     {
         return $this->hasMany(Telefono::class);
+    }
+
+    public function estado_civil()
+    {
+        return $this->belongsTo(Estado_civil::class);
     }
 
 }

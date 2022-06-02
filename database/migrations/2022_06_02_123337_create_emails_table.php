@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('telefonos', function (Blueprint $table) {
+        Schema::create('emails', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_postulante');
-            $table->string('numero');
+            $table->string('email')->unique();
             $table->timestamps();
-            //Relacion de 1 a Muchos --> 1 postulante tiene muchos telefonos
+            //Relacion de 1 a Muchos --> 1 postulante tiene muchos emails
             $table->foreign('id_postulante')->references('id')->on('postulantes')
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('telefonos');
+        Schema::dropIfExists('emails');
     }
 };

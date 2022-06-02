@@ -20,10 +20,13 @@ return new class extends Migration
             $table->string('dni');
             $table->date('fecha_matricula')->nullable();
             $table->string('domicilio')->nullable();
-            $table->string('email')->unique();
             $table->string('url_foto')->nullable();
             $table->string('cargo_ocupa')->nullable();
             $table->timestamps();
+            // $table->unsignedBigInteger('id_estado_civil')->nullable();
+            //Relacion de Muchos a 1 --> 1 Estado Civil tiene muchos postulantes
+            // $table->foreign('id_estado_civil')->references('id')->on('estado_civils')
+            //         ->onDelete('set null');
         });
     }
 
