@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('emails', function (Blueprint $table) {
+            $table->engine = 'InnoDB'; // Add this line
             $table->id();
             $table->unsignedBigInteger('id_postulante');
             $table->string('email')->unique();

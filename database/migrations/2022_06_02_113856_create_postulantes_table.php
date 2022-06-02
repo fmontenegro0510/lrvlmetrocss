@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('domicilio')->nullable();
             $table->string('url_foto')->nullable();
             $table->string('cargo_ocupa')->nullable();
-            $table->unsignedBigInteger('id_civil');
+            $table->unsignedBigInteger('id_civil')->nullable();
             $table->timestamps();
             $table->foreign('id_civil')->references('id')->on('civils')
                     ->onDelete('set null')
