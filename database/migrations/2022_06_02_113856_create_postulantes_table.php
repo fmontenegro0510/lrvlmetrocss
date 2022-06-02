@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('postulantes', function (Blueprint $table) {
+            $table->engine = 'InnoDB'; // Add this line
             $table->id();
             $table->string('apellido');
             $table->string('nombre');
@@ -22,11 +23,11 @@ return new class extends Migration
             $table->string('domicilio')->nullable();
             $table->string('url_foto')->nullable();
             $table->string('cargo_ocupa')->nullable();
+            $table->unsignedBigInteger('id_civil');
             $table->timestamps();
-            // $table->unsignedBigInteger('id_estado_civil')->nullable();
-            //Relacion de Muchos a 1 --> 1 Estado Civil tiene muchos postulantes
-            // $table->foreign('id_estado_civil')->references('id')->on('estado_civils')
-            //         ->onDelete('set null');
+            $table->foreign('id_civil')->references('id')->on('civils')
+                    ->onDelete('set null')
+                    ->onUpdate('cascade');
         });
     }
 

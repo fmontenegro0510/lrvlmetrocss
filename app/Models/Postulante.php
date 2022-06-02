@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Civil;
 use App\Models\Telefono;
-use App\Models\Estado_civil;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -30,9 +30,13 @@ class Postulante extends Model
         return $this->hasMany(Telefono::class);
     }
 
-    public function estado_civil()
+    public function civils()
     {
-        return $this->belongsTo(Estado_civil::class);
+        return $this->belongsTo(Civil::class);
     }
+    
+
+
+
 
 }
