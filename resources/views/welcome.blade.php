@@ -26,7 +26,6 @@
         </style>
     </head>
     <body>
-
         <div class="container">
            <div class="grid">
                <div class="row">
@@ -53,12 +52,6 @@
                </div>
            </div>
         </div>
-
-
-
-
-
-
         <!--- Scripts -->
         <script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
 
