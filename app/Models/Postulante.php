@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Civil;
 use App\Models\Telefono;
 use App\Models\Psicofisico;
+use App\Models\Documentacion;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -40,5 +41,10 @@ class Postulante extends Model
     {
         return $this->hasOne(Psicofisico::class);
     }
-    
+
+    public function documentacion()
+    {
+        return $this->hasOne(Documentacion::class);
+    }
+
 }

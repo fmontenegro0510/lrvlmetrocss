@@ -13,11 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('psicofisicos', function (Blueprint $table) {
+        Schema::create('documentacions', function (Blueprint $table) {
             $table->id();
-            $table->string('fecha_realizacion');
-            $table->boolean('hizo_reserva')->default(false);
-            $table->boolean('tiene_sobre')->default(false);
+            $table->date('buena_conducta');
+            $table->boolean('foto')->default(false);
+            $table->date('antiguedad');
+            $table->date('sanciones');
+            $table->date('certificado_domicilio');
+            $table->date('redam');
+            $table->boolean('titulo_autenticado')->default(false);
+            $table->date('psicofisico');
+            $table->string('informacion_sumaria');
+            $table->string('matricula');
             $table->unsignedBigInteger('id_postulante')->unique();
             $table->foreign('id_postulante')->references('id')->on('psicofisicos')->onDelete('cascade');
             $table->timestamps();
@@ -31,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('psicofisicos');
+        Schema::dropIfExists('documentacions');
     }
 };
