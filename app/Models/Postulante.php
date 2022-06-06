@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Civil;
+use App\Models\Concurso;
 use App\Models\Telefono;
 use App\Models\Psicofisico;
 use App\Models\Documentacion;
@@ -50,5 +51,13 @@ class Postulante extends Model
     {
         return $this->hasOne(Documentacion::class);
     }
+
+    //Muchos a Muchos (Un postulante rinde muchos Concursos)
+    public function concursos()
+    {
+        return $this->belongsToMany(Concurso::class);
+    }
+ 
+
 
 }
