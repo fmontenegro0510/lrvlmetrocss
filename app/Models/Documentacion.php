@@ -23,6 +23,7 @@ class Documentacion extends Model
         'matricula',
     ];
 
+    //Uno a Uno
     public function postulante()
     {
         return $this->belongsTo(Postulante::class);

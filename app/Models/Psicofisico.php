@@ -20,6 +20,7 @@ class Psicofisico extends Model
         'tiene_sobre',
     ];
     
+    //Uno a Uno
     public function postulante()
     {
         return $this->belongsTo(Postulante::class);

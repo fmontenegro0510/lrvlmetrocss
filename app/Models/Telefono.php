@@ -19,6 +19,7 @@ class Telefono extends Model
         'numero',
     ];
 
+    //Muchos a Uno
     public function postulante()
     {
         return $this->belongsTo(Postulante::class);

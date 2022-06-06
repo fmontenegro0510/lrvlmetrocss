@@ -18,6 +18,7 @@ class Email extends Model
         'email',
     ];
 
+    //Muchos a Uno
     public function postulante()
     {
         return $this->belongsTo(Postulante::class);

@@ -27,21 +27,25 @@ class Postulante extends Model
         'cargo_ocupa',
     ];
 
+    //Uno a Muchos (Un postulante tiene uno o Muchos numeros de Telefono)
     public function telefonos()
     {
         return $this->hasMany(Telefono::class);
     }
 
+    //Muchos a Uno (Un postulante tiene un estado civil)
     public function civils()
     {
         return $this->belongsTo(Civil::class);
     }
 
+    //Uno a Uno (Un postulante tiene un estudio Psicofisico)
     public function psicofisicos()
     {
         return $this->hasOne(Psicofisico::class);
     }
 
+    //Uno a Uno (Un postulante tiene un consjunto de Documentacion)
     public function documentacion()
     {
         return $this->hasOne(Documentacion::class);
